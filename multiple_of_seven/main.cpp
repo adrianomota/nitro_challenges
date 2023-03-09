@@ -10,7 +10,7 @@ int main(){
     if(multiple < 1000 && (multiple % 7) == 0) {
        cout << "É MULTIPLO DE 7" << endl;
     } else {
-        cout << "ÉSSE NÃO É" << endl;
+        cout << "ESSE NÃO É" << endl;
     }
 
     return 0;
