@@ -5,9 +5,9 @@ using namespace std;
 int indexOf(int arr[],  int size, int value);
 
 int main() {
-    int vector[] = {2,3,4,5,43,9};
-    int len = sizeof(vector) / sizeof(vector[0]);
-    int idx = indexOf(vector, len, 43);
+    int arr[] = {2,3,4,5,43,9};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    int idx = indexOf(arr, len, 43);
     cout << idx << endl;
     return 0;
 }
