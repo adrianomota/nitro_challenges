@@ -4,7 +4,6 @@ using namespace std;
 
 int main(){
     int size;
-    
 
     cin >> size;
     
@@ -15,7 +14,7 @@ int main(){
             cin >> sequence[i];
         }
 
-        for (int i = size - 1; i > 0; i--)
+        for (int i = size - 1; i >= 0; i--)
         {
           cout << sequence[i] << " ";
         }
