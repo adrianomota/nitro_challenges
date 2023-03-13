@@ -4,6 +4,7 @@
     "*.leex": "html-eex",
     "hash_map": "cpp",
     "algorithm": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "ostream": "cpp"
   }
 }
