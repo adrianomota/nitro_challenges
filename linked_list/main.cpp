@@ -33,7 +33,6 @@ void insert(Node **head,Node **tail, Node *node) {
   }
 }
 
-
 /*
 Complexidade de tempo
 -> Melhor caso
@@ -81,8 +80,6 @@ Caso medio
 Pior caso
 -> O(1) -> Constante
 */
-
-
 void printLinkedList(Node *head) {
   Node *current = head;
 
@@ -92,6 +89,47 @@ void printLinkedList(Node *head) {
   }
   cout << "NULL" << endl;
 
+}
+
+/*
+Complexidade de tempo
+-> Melhor caso -> O(1) -> Constante
+-> Caso meldio -> O(N/2) -> O(N) -> Linear
+-> Pior caso -> O(N) -> Linear
+
+COmplexidade de espaco
+-> Melhor caso -> O(1) -> Constante
+-> Caso meldio -> O(1) -> Constante
+-> Pior caso   -> O(1) -> Constante
+*/
+void remove(Node **head,Node **tail, Node *node) {
+ if(*head == NULL) {
+    return;
+ }
+
+ if(*head == node) {
+    *head = (*head)->next;
+    if(*head == NULL) {
+      *tail = NULL;
+    }
+    delete node;
+    return;
+ }
+
+ Node *current = *head;
+ while (current->next != NULL)
+ {
+    if(current->next == node) {
+      current->next = node->next;
+
+      if(current->next == NULL) {
+        *tail = current;
+      }
+      delete node;
+      return;
+    }
+    current = current->next;
+ }
 }
 
 int main() {
@@ -105,14 +143,15 @@ int main() {
     insert(&head, &tail, node);
   }
 
-  printLinkedList(head);
-
-  Node *element = find(head, 7);
+  Node *element = find(head, 10);
 
   if(element != NULL) {
     cout << "Element " << element->data << " exists" << endl;
   } else {
     cout << "Element doesn't exists" << endl;
   }
-return 0;
+
+  remove(&head, &tail, element);
+  printLinkedList(head);
+  return 0;
 }
